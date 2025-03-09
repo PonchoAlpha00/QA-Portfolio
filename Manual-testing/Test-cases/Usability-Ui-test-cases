@@ -1,0 +1,105 @@
+# 📝 Usability & UI Testing Test Cases
+
+## 📌 **Objective:**
+Ensure the **user interface (UI) and usability** of the application meet design and accessibility standards, providing a seamless user experience.
+
+---
+
+## **1. Test Case Structure**
+Each test case follows this format:
+
+| **Test Case ID** | **Title** | **Description** |
+|-----------------|-----------|----------------|
+| UI-TC-001 | Validate Login Page Layout | Ensure that all elements on the login page are properly aligned and displayed correctly. |
+| UI-TC-002 | Button Click Response | Verify that all buttons are clickable and provide expected feedback. |
+| UI-TC-003 | Navigation Bar Accessibility | Validate that the navigation bar is accessible and correctly redirects to relevant pages. |
+| UI-TC-004 | Form Field Validation | Ensure input fields display proper validation messages when incorrect data is entered. |
+| UI-TC-005 | Responsive Design Check | Verify that the UI adapts correctly on different screen sizes (desktop, tablet, mobile). |
+
+---
+
+## **2. Detailed Usability & UI Test Cases**
+
+### **Test Case 1: Validate Login Page Layout**
+**Test Case ID:** UI-TC-001  
+**Description:** Ensure that all elements (logo, text fields, buttons) on the login page are properly aligned and visible.  
+
+| **Step** | **Action** | **Expected Result** |
+|---------|----------|------------------|
+| 1 | Open the login page | The page loads correctly without UI distortions. |
+| 2 | Check the alignment of text fields and buttons | All elements are properly aligned and visually appealing. |
+| 3 | Resize the browser window | UI elements should not overlap or break. |
+
+**Test Priority:** High  
+**Test Type:** UI, Visual Testing  
+
+---
+
+### **Test Case 2: Button Click Response**
+**Test Case ID:** UI-TC-002  
+**Description:** Verify that buttons provide appropriate feedback when clicked.  
+
+| **Step** | **Action** | **Expected Result** |
+|---------|----------|------------------|
+| 1 | Click the login button without entering credentials | An error message should appear indicating required fields. |
+| 2 | Click the 'Forgot Password' button | The user should be redirected to the password recovery page. |
+| 3 | Hover over buttons | The button should visually indicate an interactive state (e.g., color change, shadow effect). |
+
+**Test Priority:** Medium  
+**Test Type:** UI, Functional Testing  
+
+---
+
+### **Test Case 3: Navigation Bar Accessibility**
+**Test Case ID:** UI-TC-003  
+**Description:** Validate that the navigation menu is accessible and properly functioning.  
+
+| **Step** | **Action** | **Expected Result** |
+|---------|----------|------------------|
+| 1 | Click on each navigation menu item | The correct page should load with no UI errors. |
+| 2 | Use keyboard navigation (Tab key) | Focus should shift sequentially through the navigation items. |
+| 3 | Check dropdown menus (if applicable) | Dropdowns should open smoothly and close when clicking outside. |
+
+**Test Priority:** High  
+**Test Type:** UI, Accessibility Testing  
+
+---
+
+### **Test Case 4: Form Field Validation**
+**Test Case ID:** UI-TC-004  
+**Description:** Ensure proper validation messages appear when incorrect data is entered.  
+
+| **Step** | **Action** | **Expected Result** |
+|---------|----------|------------------|
+| 1 | Enter an invalid email format in the email field | A validation message should appear: "Invalid email format". |
+| 2 | Leave mandatory fields blank and submit | An error message should indicate required fields. |
+| 3 | Enter a weak password (e.g., 12345) | A message should suggest using a stronger password. |
+
+**Test Priority:** High  
+**Test Type:** UI, Functional Testing  
+
+---
+
+### **Test Case 5: Responsive Design Check**
+**Test Case ID:** UI-TC-005  
+**Description:** Validate that UI adapts correctly on various screen sizes.  
+
+| **Step** | **Action** | **Expected Result** |
+|---------|----------|------------------|
+| 1 | Open the application on a desktop | The layout should be properly structured. |
+| 2 | Open the application on a tablet | The UI should adjust, with proper spacing and readable text. |
+| 3 | Open the application on a mobile device | The UI should be fully responsive with a mobile-friendly menu. |
+
+**Test Priority:** High  
+**Test Type:** UI, Responsive Design Testing  
+
+---
+
+## **3. Best Practices for Usability & UI Testing**
+✅ Ensure **consistency** in UI elements (fonts, colors, button styles).  
+✅ Test on **multiple devices and screen resolutions**.  
+✅ Verify **error messages** for clarity and usability.  
+✅ Check **keyboard navigation** and accessibility compliance.  
+✅ Monitor **loading speed and responsiveness**.  
+
+---
