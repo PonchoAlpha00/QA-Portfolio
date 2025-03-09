@@ -1,0 +1,45 @@
+# 📝 Test Plan: Shopping Cart Functionality
+
+## 📌 **Objective:**
+Ensure that the shopping cart functionality works correctly, allowing users to add, remove, and manage items before checkout.
+
+## 📌 **Scope:**
+- Adding items to the cart
+- Removing items from the cart
+- Updating item quantities
+- Validating cart calculations (subtotal, taxes, total price)
+- Handling cart persistence across sessions
+
+## 📌 **Test Approach:**
+- Functional testing for core shopping cart actions
+- UI testing to ensure a user-friendly experience
+- Negative testing (e.g., adding invalid quantities)
+- Database validation for cart updates
+
+## 📌 **Test Cases:**
+
+| Test ID  | Test Case Name                 | Description |
+|----------|--------------------------------|-------------|
+| TC-001   | Adding Items to the Cart      | Verify that users can add items to the shopping cart successfully. |
+| TC-002   | Removing Items from the Cart  | Ensure users can remove items from their cart. |
+| TC-003   | Updating Item Quantity        | Validate that changing the quantity of items updates the subtotal correctly. |
+| TC-004   | Validating Cart Persistence   | Ensure that items remain in the cart after refreshing the page. |
+| TC-005   | Empty Cart Message            | Confirm that an empty cart displays an appropriate message. |
+| TC-006   | Applying Discount Codes       | Verify that users can apply valid discount codes. |
+| TC-007   | Handling Expired Discount Codes | Ensure expired discount codes display an appropriate error. |
+| TC-008   | Checking Out Successfully     | Validate that users can complete checkout successfully. |
+| TC-009   | Payment Failure Handling      | Confirm that users are notified if a payment fails. |
+| TC-010   | Multi-Device Cart Persistence | Ensure cart contents are maintained when switching devices. |
+
+## 📌 **Test Environment:**
+- Browsers: Chrome, Firefox, Edge, Safari
+- OS: Windows, macOS, Android, iOS
+- Database: MySQL/PostgreSQL
+
+## 📌 **Pass/Fail Criteria:**
+- Pass: Shopping cart behaves as expected for all test cases.
+- Fail: Items are not added, removed, or updated correctly.
+
+## 📌 **Risks & Assumptions:**
+- Session management must be working correctly.
+- Cart data must be stored properly in the database.

@@ -1,0 +1,145 @@
+# 📝 ETL Process Validation Test Cases
+
+## 📌 **Objective:**
+Ensure that the ETL (Extract, Transform, Load) process correctly extracts, processes, and loads data into the target database without errors.
+
+---
+
+## **Test Case 1: Data Extraction Validation**
+
+**Test ID:** ETL-TC-001  
+**Title:** Validate Data Extraction from Source System  
+**Description:** Verify that data is correctly extracted from the source system and matches expected records.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL extraction process | N/A | Data is extracted successfully without errors |
+| 2 | Validate extracted row count | `SELECT COUNT(*) FROM source_table;` | The row count matches expected records |
+| 3 | Verify data integrity | `SELECT * FROM source_table WHERE column IS NULL;` | No unexpected NULL values in mandatory fields |
+
+### **Test Environment:**
+- Source Database: MySQL/PostgreSQL
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** Data extraction completes successfully, and row count matches expectations.
+- **Fail:** Missing records, NULL values in mandatory fields, or extraction failure.
+
+---
+
+## **Test Case 2: Data Transformation Rules Validation**
+
+**Test ID:** ETL-TC-002  
+**Title:** Validate Transformation Logic  
+**Description:** Ensure that transformation rules are applied correctly before loading into the target database.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL transformation process | N/A | Transformation completes without errors |
+| 2 | Validate column mapping | `SELECT column_a AS transformed_column FROM staging_table;` | Transformed data matches expected values |
+| 3 | Check for duplicate records | `SELECT column, COUNT(*) FROM staging_table GROUP BY column HAVING COUNT(*) > 1;` | No duplicate records exist |
+
+### **Test Environment:**
+- Source Database: MySQL/PostgreSQL
+- Staging Table: Redshift/Snowflake
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** Transformed data follows expected rules and no duplicates exist.
+- **Fail:** Incorrect transformation logic or presence of duplicate records.
+
+---
+
+## **Test Case 3: Data Load Verification**
+
+**Test ID:** ETL-TC-003  
+**Title:** Validate Data Load into Target Database  
+**Description:** Ensure that transformed data is correctly loaded into the target system.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL load process | N/A | Data loads successfully |
+| 2 | Validate record count in target table | `SELECT COUNT(*) FROM target_table;` | Row count matches expected transformed records |
+| 3 | Verify data consistency | `SELECT * FROM target_table WHERE column_x IS NULL;` | No mandatory fields contain NULL values |
+
+### **Test Environment:**
+- Target Database: Redshift/Snowflake
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** All expected data is loaded without missing or incorrect records.
+- **Fail:** Data discrepancies, missing records, or incorrect load processing.
+
+---
+
+## **Test Case 4: Data Type and Format Validation**
+
+**Test ID:** ETL-TC-004  
+**Title:** Validate Data Types and Format Consistency  
+**Description:** Ensure that data types and formats remain consistent across the ETL process.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Check column data types | `SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'target_table';` | Data types match the expected schema |
+| 2 | Validate date format | `SELECT column_date FROM target_table WHERE column_date NOT LIKE 'YYYY-MM-DD%';` | No records contain incorrect date formats |
+| 3 | Verify numeric precision | `SELECT column_price FROM target_table WHERE column_price LIKE '%.%_%';` | Decimal values maintain correct precision |
+
+### **Test Environment:**
+- Target Database: Redshift/Snowflake
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** Data types, formats, and numeric precision match expected schema.
+- **Fail:** Incorrect formatting or inconsistent data types.
+
+---
+
+## **Test Case 5: Incremental Load Validation**
+
+**Test ID:** ETL-TC-005  
+**Title:** Validate Incremental Data Load  
+**Description:** Ensure that only new and updated records are loaded without duplicating existing data.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the incremental ETL process | N/A | Only new/updated records are processed |
+| 2 | Check duplicate entries in target table | `SELECT column_id, COUNT(*) FROM target_table GROUP BY column_id HAVING COUNT(*) > 1;` | No duplicate records should exist |
+| 3 | Validate last update timestamp | `SELECT MAX(updated_at) FROM target_table;` | Timestamp matches the latest ETL run |
+
+### **Test Environment:**
+- Target Database: Redshift/Snowflake
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** New/updated records are processed, and duplicates do not exist.
+- **Fail:** Duplicate records, missing incremental updates.
+
+---
+
+## **Test Case 6: Data Reconciliation Between Source and Target**
+
+**Test ID:** ETL-TC-006  
+**Title:** Validate Data Consistency Between Source and Target  
+**Description:** Compare data between the source and target databases to ensure completeness.
+
+### **Steps:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Compare total record counts | `SELECT (SELECT COUNT(*) FROM source_table) - (SELECT COUNT(*) FROM target_table);` | The difference should be zero |
+| 2 | Validate column-level transformations | `SELECT source.column_a, target.column_b FROM source_table source JOIN target_table target ON source.id = target.id;` | Data remains consistent across both tables |
+
+### **Test Environment:**
+- Source Database: MySQL/PostgreSQL
+- Target Database: Redshift/Snowflake
+- ETL Tool: Apache Nifi, Talend, AWS Glue
+
+### **Pass/Fail Criteria:**
+- **Pass:** No data loss, and all transformed records match the source.
+- **Fail:** Data discrepancies between source and target.
+
+---

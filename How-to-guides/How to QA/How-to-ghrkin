@@ -1,0 +1,178 @@
+# 📝 How to Use Gherkin for Test Automation
+
+## 📌 **Objective:**
+Gherkin is a **domain-specific language** used for writing **structured test cases** in a **readable, business-friendly format**. This guide explains **how to use Gherkin for test automation**.
+
+---
+
+## **1. What is Gherkin?**
+- Gherkin is a **plain-text language** that follows a structured format.
+- It allows writing **executable test cases** using tools like **Cucumber, SpecFlow, and Behave**.
+- Uses the **Given-When-Then** syntax to describe test scenarios.
+
+---
+
+## **2. Basic Gherkin Syntax**
+
+| Keyword | Symbol | Description |
+|---------|--------|-------------|
+| **Feature** | `Feature:` | Describes the functionality under test. |
+| **Scenario** | `Scenario:` | Represents a specific test case. |
+| **Given** | `Given` | Sets up the preconditions. |
+| **When** | `When` | Defines the action performed. |
+| **Then** | `Then` | Describes the expected outcome. |
+| **And** | `And` | Adds multiple steps under Given/When/Then. |
+| **But** | `But` | Introduces an exception or alternate flow. |
+| **Background** | `Background:` | Defines common preconditions for all scenarios. |
+| **Scenario Outline** | `Scenario Outline:` | Used for parameterized test cases with examples. |
+| **Examples** | `Examples:` | Provides data sets for Scenario Outline. |
+| **Rule** | `Rule:` | Defines business rules within a feature. |
+| **Doc Strings** | `"""` | Allows multi-line input in test steps. |
+| **Tags** | `@Tag` | Used to group and filter test cases. |
+
+---
+
+## **3. Example of a Gherkin Feature File**
+```gherkin
+Feature: User Login Functionality
+  As a registered user,
+  I want to log into the system,
+  So that I can access my account.
+
+  Scenario: Successful Login with Valid Credentials
+    Given the user is on the login page
+    When the user enters valid credentials
+    And clicks the login button
+    Then the user should be redirected to the dashboard
+
+  Scenario: Login with Incorrect Password
+    Given the user is on the login page
+    When the user enters an incorrect password
+    Then an error message should be displayed
+```
+
+---
+
+## **4. Using Background for Common Steps**
+Use the `Background` keyword for **shared preconditions**:
+```gherkin
+Feature: Shopping Cart Functionality
+
+  Background:
+    Given the user is logged in
+    And the user has items in the cart
+
+  Scenario: Checkout Process
+    When the user proceeds to checkout
+    Then the order summary should be displayed
+```
+
+---
+
+## **5. Scenario Outline for Parameterized Testing**
+Use `Scenario Outline` and `Examples` to run the same test with **different data sets**:
+```gherkin
+Feature: Login Functionality
+
+  Scenario Outline: Login with multiple credentials
+    Given the user is on the login page
+    When the user enters username "<username>" and password "<password>"
+    Then the login should be "<status>"
+
+  Examples:
+    | username      | password   | status   |
+    | testuser1     | Pass1234   | success  |
+    | testuser2     | WrongPass  | failure  |
+```
+
+---
+
+## **6. Advanced Gherkin Usage**
+### **Using Rules for Business Logic**
+```gherkin
+Feature: Discount Application
+
+  Rule: Apply discount only for premium users
+
+    Scenario: Premium user receives discount
+      Given the user is a premium member
+      When they make a purchase
+      Then a 10% discount should be applied
+
+    Scenario: Regular user does not receive discount
+      Given the user is not a premium member
+      When they make a purchase
+      Then no discount should be applied
+```
+
+### **Using Doc Strings for Multi-Line Inputs**
+```gherkin
+Feature: Data Input Validation
+
+  Scenario: User submits a JSON payload
+    Given the user sends the following data:
+      """
+      {
+        "username": "testuser",
+        "password": "SecurePass123"
+      }
+      """
+    When the request is processed
+    Then the response should return a status 200
+```
+
+---
+
+## **7. API Testing with Gherkin**
+### **Example API Test Case**
+```gherkin
+Feature: API Authentication
+
+  Scenario: Valid API token returns successful response
+    Given I have a valid API token
+    When I send a GET request to "/user/profile"
+    Then the response status should be 200
+    And the response body should contain "username"
+
+  Scenario: Invalid API token returns unauthorized error
+    Given I have an invalid API token
+    When I send a GET request to "/user/profile"
+    Then the response status should be 401
+    And the response body should contain "Unauthorized"
+```
+
+---
+
+## **8. ETL Testing with Gherkin**
+### **Example ETL Test Case**
+```gherkin
+Feature: ETL Data Load Validation
+
+  Scenario: Validate Data Extraction
+    Given the source database contains 1000 records
+    When the ETL job runs
+    Then the staging table should have 1000 records
+
+  Scenario: Validate Data Transformation
+    Given a record in the source database has value "USD"
+    When the ETL job runs
+    Then the transformed record should have value "US Dollar"
+
+  Scenario: Validate Data Load into Target Database
+    Given the staging table is populated
+    When the ETL job completes
+    Then the target database should contain the expected records
+```
+
+---
+
+## **9. Best Practices for Writing Gherkin Tests**
+✅ Keep scenarios **short and clear**.  
+✅ Use **business language**—avoid technical details.  
+✅ **Reuse steps** with Background to avoid duplication.  
+✅ Use **Scenario Outlines** for data-driven testing.  
+✅ Ensure test cases are **self-explanatory**.  
+✅ Focus on **expected behavior, not UI details**.  
+✅ Use **tags** to categorize tests (e.g., `@Regression`, `@API`).  
+
+---

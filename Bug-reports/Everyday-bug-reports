@@ -1,0 +1,85 @@
+# 📝 Bug Reports
+
+## 📌 **Bug Report 1: Cart Not Updating in Real-Time**
+
+**Bug ID:** BR-001  
+**Title:** Cart does not update when multiple users modify it simultaneously  
+**Description:** When two users modify the cart at the same time, changes are not reflected in real-time, leading to inconsistencies.  
+**Severity:** High  
+**Priority:** Critical  
+
+### **Steps to Reproduce:**
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | User A adds an item to the cart | Item: Laptop | Laptop appears in User A’s cart |
+| 2 | User B removes the same item from the cart | Same Laptop | Laptop should be removed for both users |
+| 3 | Refresh both users' carts | - | Data should sync correctly, but the cart displays outdated information |
+
+**Expected Outcome:** The cart should update in real-time across sessions.  
+**Actual Outcome:** The cart retains outdated items until manually refreshed.  
+**Attachments:** Screenshot of incorrect cart state.  
+
+---
+
+## 📌 **Bug Report 2: Payment Not Rolling Back on Failure**
+
+**Bug ID:** BR-002  
+**Title:** Payment deducted but order fails due to system error  
+**Description:** Users are charged for their orders even if the checkout process fails due to backend issues.  
+**Severity:** Critical  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Proceed to checkout | Items in cart | Redirected to payment page |
+| 2 | Complete payment | Valid card details | Payment is processed |
+| 3 | System throws an error | Server timeout | Payment should roll back, but funds are deducted |
+
+**Expected Outcome:** Payment should be refunded or rollback should occur.  
+**Actual Outcome:** Payment is deducted, but order is not placed.  
+**Attachments:** Transaction log showing failed order but successful charge.  
+
+---
+
+## 📌 **Bug Report 3: Discount Code Stackability Issue**
+
+**Bug ID:** BR-003  
+**Title:** Users can stack multiple discount codes incorrectly  
+**Description:** The system allows applying multiple discount codes that should not be stackable, leading to incorrect pricing.  
+**Severity:** Medium  
+**Priority:** Medium  
+
+### **Steps to Reproduce:**
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add an item to the cart | Item: TV | Item added successfully |
+| 2 | Apply a discount code | Code: 10%OFF | 10% discount applied correctly |
+| 3 | Apply another conflicting code | Code: 20%OFF | System should reject second discount, but it applies incorrectly |
+
+**Expected Outcome:** System should apply only one discount or prioritize the highest discount.  
+**Actual Outcome:** Both discounts apply, causing incorrect final pricing.  
+**Attachments:** Screenshot of stacked discounts.  
+
+---
+
+## 📌 **Bug Report 4: Items Missing After Session Expiry**
+
+**Bug ID:** BR-004  
+**Title:** Cart items disappear after session expiration  
+**Description:** When a user is inactive for an extended period, their cart is cleared upon re-login instead of persisting.  
+**Severity:** High  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add items to the cart | Item: Smartphone | Items should appear in the cart |
+| 2 | Leave session inactive for 1 hour | - | Session expires |
+| 3 | Log back in and check the cart | - | Items should persist but they are missing |
+
+**Expected Outcome:** Items should remain in the cart after re-login.  
+**Actual Outcome:** Cart is empty after session expiration.  
+**Attachments:** N/A  
+
+---

@@ -1,0 +1,109 @@
+# 📝 How to Prepare for an Estimation Meeting
+
+## 📌 **Objective:**
+An **Estimation Meeting** is held to define the effort required for project tasks, ensuring realistic planning and resource allocation. This document outlines how to **prepare for a successful estimation meeting**.
+
+---
+
+## **1. Define the Meeting Goals**
+Before the meeting, establish:
+- **What needs to be estimated?** (Features, test cases, sprints, releases).
+- **Who are the key participants?** (QA, Developers, Product Managers, Business Analysts).
+- **What estimation technique will be used?** (Story points, T-shirt sizing, time-based estimation).
+- **What are the expected outcomes?** (Agreed-upon estimates, identified risks, assigned owners).
+
+---
+
+## **2. Gather Required Information**
+To make the meeting productive:
+- **Review project scope and backlog** (Requirement documents, feature specifications).
+- **Identify dependencies** (APIs, third-party integrations, environment readiness).
+- **Assess historical data** (Past sprint velocity, defect rates, testing complexity).
+- **Understand constraints** (Resources, deadlines, compliance requirements).
+
+---
+
+## **3. Choose an Estimation Technique**
+| Technique | Description |
+|-----------|-------------|
+| **Story Points** | Estimates based on complexity, risk, and effort. |
+| **T-Shirt Sizing** | Uses sizes (S, M, L, XL) for rough effort estimation. |
+| **Time-Based Estimation** | Assigns estimated hours/days to complete tasks. |
+| **Wideband Delphi** | Uses expert consensus for precise estimations. |
+| **Function Points** | Measures complexity based on data flow and transactions. |
+
+---
+
+## **4. Prepare Key Questions**
+To facilitate discussion, prepare targeted questions such as:
+
+### **For Development Teams:**
+- What are the complexities of each task?
+- Are there dependencies that could impact estimates?
+- How much effort is required for coding, testing, and integration?
+
+### **For QA Teams:**
+- What is the expected scope of testing?
+- Are automation scripts required or is manual testing sufficient?
+- What factors may increase testing effort (data setup, environments, regression scope)?
+
+### **For Product & Business Teams:**
+- What is the priority of each feature?
+- Are there regulatory or compliance factors to consider?
+- What are the key success metrics?
+
+---
+
+## **5. Structure the Meeting Agenda**
+A well-structured agenda ensures clarity and efficiency:
+
+1. **Introduction (5 min)** – Define meeting objectives and estimation technique.
+2. **Review Scope (10 min)** – Discuss features/tasks to be estimated.
+3. **Break Down Tasks (15 min)** – Identify subtasks and dependencies.
+4. **Estimate Effort (20 min)** – Assign effort using the chosen technique.
+5. **Risk Assessment (10 min)** – Identify risks and adjust estimates accordingly.
+6. **Next Steps & Assignments (5 min)** – Summarize agreements and define action items.
+
+---
+
+## **6. Assign Roles & Responsibilities**
+| Role | Responsibility |
+|------|--------------|
+| **Scrum Master / Project Manager** | Facilitates discussion, ensures process adherence. |
+| **Development Lead** | Provides effort estimates for coding and implementation. |
+| **QA Lead** | Estimates effort for testing activities. |
+| **Business Analyst** | Ensures estimates align with business goals. |
+| **Product Owner** | Clarifies priorities and dependencies. |
+
+---
+
+## **7. Capture Notes and Action Items**
+- **Document estimated effort for each task.**
+- **Track open questions and follow-ups.**
+- **Identify action items and assign owners.**
+
+Example:
+| Task | Estimated Effort | Owner | Dependencies |
+|------|----------------|------|-------------|
+| Develop login API | 5 story points | Dev Team | Backend readiness |
+| Implement UI validation | 3 story points | Frontend Team | API integration |
+| Create automated test suite | 8 story points | QA Team | Test data setup |
+
+---
+
+## **8. Follow-Up After the Meeting**
+- **Send a meeting summary** with estimated efforts and task owners.
+- **Update sprint backlog or project plan** with final estimates.
+- **Schedule follow-up discussions** if needed for refinements.
+
+---
+
+## **Best Practices for a Successful Estimation Meeting**
+✅ Break down large tasks into **smaller, manageable pieces** before estimating.  
+✅ Use **historical data** from past projects to improve accuracy.  
+✅ Ensure **all key stakeholders are present** for better alignment.  
+✅ Keep discussions **focused on complexity and effort**, not time pressure.  
+✅ Avoid **groupthink**—encourage independent estimates before discussing.  
+✅ Regularly **reassess estimates** as new information emerges.  
+
+---

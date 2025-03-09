@@ -1,0 +1,105 @@
+# 📝 ETL Bug Reports
+
+## 📌 **Bug Report 1: Data Loss During Extraction**
+
+**Bug ID:** ETL-BR-001  
+**Title:** Missing Records After Extraction  
+**Description:** Some records are missing in the staging table after extraction from the source system.  
+**Severity:** Critical  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL extraction process | N/A | Extraction completes successfully |
+| 2 | Compare source and staging row counts | `SELECT COUNT(*) FROM source_table;` vs. `SELECT COUNT(*) FROM staging_table;` | Both counts should match |
+| 3 | Identify missing records | `SELECT * FROM source_table WHERE id NOT IN (SELECT id FROM staging_table);` | No missing records |
+
+**Expected Outcome:** All records from the source should be extracted and available in the staging table.  
+**Actual Outcome:** Some records are missing.  
+**Attachments:** Screenshot of row count mismatch.  
+
+---
+
+## 📌 **Bug Report 2: Incorrect Data Transformation**
+
+**Bug ID:** ETL-BR-002  
+**Title:** Transformation Rules Not Applied Correctly  
+**Description:** Data transformation rules are not applied as per requirements, leading to incorrect values in the target table.  
+**Severity:** High  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL transformation process | N/A | Transformation completes without errors |
+| 2 | Validate transformed column values | `SELECT column_transformed FROM target_table;` | Transformed values match expected output |
+| 3 | Compare expected vs. actual values | `SELECT column_source, column_transformed FROM source_table JOIN target_table ON source_table.id = target_table.id;` | Values should align correctly |
+
+**Expected Outcome:** Transformation rules should be correctly applied to all records.  
+**Actual Outcome:** Some transformed values do not match expected results.  
+**Attachments:** Sample data comparison screenshot.  
+
+---
+
+## 📌 **Bug Report 3: Duplicate Records in Target Table**
+
+**Bug ID:** ETL-BR-003  
+**Title:** Duplicate Entries Found After ETL Load  
+**Description:** Some records appear multiple times in the target table after an ETL run.  
+**Severity:** High  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the ETL load process | N/A | Load completes successfully |
+| 2 | Check for duplicate records | `SELECT id, COUNT(*) FROM target_table GROUP BY id HAVING COUNT(*) > 1;` | No duplicates should exist |
+| 3 | Verify unique constraints | `SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = 'target_table' AND CONSTRAINT_TYPE = 'UNIQUE';` | Unique constraints should be enforced |
+
+**Expected Outcome:** No duplicate records should exist in the target table.  
+**Actual Outcome:** Some records appear multiple times.  
+**Attachments:** Query output showing duplicate records.  
+
+---
+
+## 📌 **Bug Report 4: Data Type Mismatch**
+
+**Bug ID:** ETL-BR-004  
+**Title:** Incorrect Data Types in Target Table  
+**Description:** The data types in the target table do not match the expected schema.  
+**Severity:** Medium  
+**Priority:** Medium  
+
+### **Steps to Reproduce:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Check data types in target table | `SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'target_table';` | Data types should match schema definition |
+| 2 | Validate data consistency | `SELECT column_number FROM target_table WHERE column_number LIKE '%[^0-9.]%';` | All numeric fields should contain valid numbers |
+
+**Expected Outcome:** Data types should be correctly maintained.  
+**Actual Outcome:** Some fields have incorrect types.  
+**Attachments:** Screenshot of schema mismatch.  
+
+---
+
+## 📌 **Bug Report 5: Incremental Load Failure**
+
+**Bug ID:** ETL-BR-005  
+**Title:** Incremental Data Load Processing Incorrectly  
+**Description:** The ETL process is not correctly identifying new and updated records, leading to missing or duplicate data.  
+**Severity:** High  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | SQL Query | Expected Result |
+|------|--------|----------|----------------|
+| 1 | Run the incremental ETL process | N/A | Process completes without errors |
+| 2 | Verify record updates | `SELECT id, updated_at FROM target_table WHERE updated_at < (SELECT MAX(updated_at) FROM staging_table);` | Target table should contain the latest updates |
+| 3 | Check for duplicate records | `SELECT id, COUNT(*) FROM target_table GROUP BY id HAVING COUNT(*) > 1;` | No duplicate records should exist |
+
+**Expected Outcome:** Incremental loads should correctly process only new and updated records.  
+**Actual Outcome:** Some records are missing or duplicated.  
+**Attachments:** Query output showing duplicate/missing records.  
+
+---

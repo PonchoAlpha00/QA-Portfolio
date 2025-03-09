@@ -1,0 +1,40 @@
+## 📝 **Regression Testing Plan: E-commerce Checkout Process**
+
+### **Objective:**
+Ensure that the checkout process continues to function correctly after recent code changes and deployments.
+
+### **Scope:**
+- Adding items to the cart
+- Applying discounts or promo codes
+- Selecting shipping options
+- Payment processing
+- Order confirmation
+
+### **Test Approach:**
+- Retesting critical checkout functionalities
+- Automated test execution for previous scenarios
+- Manual exploratory testing for new changes
+- Database validation for order entry
+
+### **Test Scenarios:**
+1. User adds an item to the cart and completes checkout successfully.
+2. User applies a valid promo code and gets a discount.
+3. User attempts checkout with an expired promo code.
+4. User selects different shipping options.
+5. User completes checkout using different payment methods.
+6. User attempts checkout with an expired payment card.
+7. Order is successfully recorded in the database.
+8. User receives an order confirmation email.
+
+### **Test Environment:**
+- Browsers: Chrome, Firefox, Edge
+- OS: Windows, macOS, iOS, Android
+- Payment Gateways: PayPal, Stripe, Credit Cards
+
+### **Pass/Fail Criteria:**
+- Pass: User successfully completes checkout and receives an order confirmation.
+- Fail: User is unable to complete checkout due to errors.
+
+### **Risks & Assumptions:**
+- Payment gateway must be online.
+- Test credit cards must be available for testing.

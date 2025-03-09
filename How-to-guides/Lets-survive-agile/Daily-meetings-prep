@@ -1,0 +1,52 @@
+# 📝 How to Prepare for a Daily Scrum Meeting
+
+## 📌 **Objective:**
+A **Daily Scrum Meeting** (Stand-up) is a short, time-boxed meeting (typically 15 minutes) where team members sync up on progress, challenges, and plans for the day. This document outlines how to **prepare for an effective Daily Scrum**.
+
+---
+
+## **1. Define the Meeting Goals**
+Before the meeting, ensure:
+- **Who should attend?** (Development Team, QA, Scrum Master, Product Owner if needed).
+- **What are the objectives?** (Align team progress, identify blockers, plan the next steps).
+- **What is the time limit?** (Keep it under 15 minutes).
+
+---
+
+## **2. Gather Key Updates**
+Each participant should be prepared to answer these **three key questions**:
+1. **What did I do yesterday?** (Briefly share completed tasks or progress).
+2. **What will I do today?** (State the next planned tasks and priorities).
+3. **What blockers am I facing?** (Highlight impediments that require team support).
+
+---
+
+## **3. Structure the Meeting Agenda**
+A structured approach ensures efficiency:
+
+1. **Opening (1 min)** – Scrum Master welcomes the team and sets the focus.
+2. **Team Updates (12 min)** – Each team member answers the three key questions.
+3. **Blockers Discussion (2 min)** – Quick identification of major impediments.
+4. **Wrap-up & Next Steps (1 min)** – Scrum Master summarizes key action points.
+
+---
+
+## **4. Assign Roles & Responsibilities**
+| Role | Responsibility |
+|------|--------------|
+| **Scrum Master** | Facilitates the meeting, ensures time-boxing, removes blockers. |
+| **Development Team** | Provides updates on tasks and highlights blockers. |
+| **QA Team** | Reports on test progress, defect status, and risks. |
+| **Product Owner (Optional)** | Provides clarifications if required. |
+
+---
+
+## **5. Best Practices for an Effective Daily Scrum**
+✅ **Keep it short and focused**—avoid long discussions; deep dives should happen separately.  
+✅ **Speak concisely**—stick to key points without unnecessary details.  
+✅ **Use a task board** (Jira, Trello, Azure DevOps) to visualize progress.  
+✅ **Encourage transparency**—blockers should be raised openly.  
+✅ **Start and end on time**—respect everyone's schedule.  
+✅ **Maintain a collaborative attitude**—this is a **team sync-up**, not a status report.  
+
+---

@@ -1,0 +1,59 @@
+# 📝 Test Plan: Shopping Cart Functionality
+
+## 📌 **Objective:**
+Ensure that the shopping cart functionality works correctly, allowing users to add, remove, and manage items before checkout.
+
+## 📌 **Scope:**
+- Adding items to the cart
+- Removing items from the cart
+- Updating item quantities
+- Validating cart calculations (subtotal, taxes, total price)
+- Handling cart persistence across sessions
+
+## 📌 **Test Approach:**
+- Functional testing for core shopping cart actions
+- UI testing to ensure a user-friendly experience
+- Negative testing (e.g., adding invalid quantities)
+- Database validation for cart updates
+
+## 📌 **Test Cases:**
+
+### **Test Case 1: Adding Items to the Cart**
+**Given** I am on a product page  
+**When** I click 'Add to Cart'  
+**Then** the item should be added to the shopping cart  
+
+### **Test Case 2: Removing Items from the Cart**
+**Given** I have items in my cart  
+**When** I click 'Remove' on an item  
+**Then** the item should be removed from the cart  
+
+### **Test Case 3: Updating Item Quantity**
+**Given** I have an item in my cart  
+**When** I change the quantity to a valid number  
+**Then** the subtotal should update accordingly  
+
+### **Test Case 4: Validating Cart Persistence**
+**Given** I add items to my cart and refresh the page  
+**When** I revisit the cart  
+**Then** the previously added items should still be present  
+
+### **Test Case 5: Empty Cart Message**
+**Given** I remove all items from my cart  
+**When** I check the cart page  
+**Then** a message should be displayed stating the cart is empty  
+
+## 📌 **Test Environment:**
+- Browsers: Chrome, Firefox, Edge, Safari
+- OS: Windows, macOS, Android, iOS
+- Database: MySQL/PostgreSQL
+
+## 📌 **Pass/Fail Criteria:**
+- Pass: Shopping cart behaves as expected for all test cases.
+- Fail: Items are not added, removed, or updated correctly.
+
+## 📌 **Risks & Assumptions:**
+- Session management must be working correctly.
+- Cart data must be stored properly in the database.
+
+---

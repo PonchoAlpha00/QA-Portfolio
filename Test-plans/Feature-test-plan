@@ -1,0 +1,41 @@
+## 📝 **Feature Testing Plan: User Registration System**
+
+### **Objective:**
+Ensure that the user registration system functions correctly, allowing users to create accounts, verify email addresses, and log in successfully.
+
+### **Scope:**
+- New user registration
+- Email verification process
+- Validation of required fields
+- Handling of duplicate email registration
+- Error handling for invalid inputs
+
+### **Test Approach:**
+- Functional testing of registration form
+- UI testing for form design and responsiveness
+- Negative testing with invalid inputs
+- Database validation for user entry creation
+
+### **Test Scenarios:**
+1. User successfully registers with valid data.
+2. Attempt to register with an already used email.
+3. Register with missing required fields.
+4. Register with an invalid email format.
+5. Verify email link expiration handling.
+6. Check password strength validation.
+
+### **Test Environment:**
+- Browsers: Chrome, Firefox, Edge
+- OS: Windows, macOS, iOS, Android
+- Database: MySQL / PostgreSQL
+
+### **Pass/Fail Criteria:**
+- Pass: User can register and verify their account successfully.
+- Fail: Errors occur that prevent successful registration.
+
+### **Risks & Assumptions:**
+- Email server must be functioning properly.
+- Test accounts should be available.
+
+---
+

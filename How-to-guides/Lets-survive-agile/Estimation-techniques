@@ -1,0 +1,158 @@
+# 📝 Understanding Estimation Techniques in Software Development
+
+## 📌 **Objective:**
+This document explains different **estimation techniques** used in software development, their applications, advantages, and when to use them.
+
+---
+
+## **1. Story Points**
+
+### **What It Is:**
+- Story Points are a **relative estimation method** used in Agile projects.
+- They measure the **complexity, risk, and effort** required to complete a task.
+- Uses a Fibonacci sequence (1, 2, 3, 5, 8, 13, etc.) to represent increasing effort.
+
+### **How to Use:**
+1. Assign **smaller numbers** to easy tasks and **larger numbers** to complex ones.
+2. Compare a new task with previously completed tasks to ensure **consistency**.
+3. Use **Planning Poker** (team members estimate independently and discuss discrepancies).
+
+### **When to Use:**
+✅ Best for **Agile development** and Scrum teams.  
+✅ Works well when **time estimates are uncertain**.  
+✅ Suitable for teams familiar with relative estimation.  
+
+### **Advantages:**
+✔ Encourages **team collaboration**.  
+✔ Focuses on **complexity rather than exact hours**.  
+✔ Helps teams **forecast sprint velocity**.  
+
+### **Disadvantages:**
+❌ May be difficult for **new teams to calibrate**.  
+❌ Not ideal for **fixed-time or cost-based projects**.  
+
+---
+
+## **2. T-Shirt Sizing**
+
+### **What It Is:**
+- A simple **high-level estimation technique** using size categories: **S, M, L, XL, XXL**.
+- Provides a rough effort estimate **without assigning numerical values**.
+
+### **How to Use:**
+1. Define what each size represents (e.g., S = 1 day, M = 3 days, L = 1 week).
+2. Compare tasks against previous tasks **already sized**.
+3. Use for quick **relative comparisons** without detailed analysis.
+
+### **When to Use:**
+✅ Ideal for **early-stage project planning**.  
+✅ Works well for **high-level backlog grooming**.  
+✅ Best for teams that need **fast estimations**.  
+
+### **Advantages:**
+✔ **Quick and easy** to use.  
+✔ No need for **detailed breakdowns**.  
+✔ Encourages **collaborative discussions**.  
+
+### **Disadvantages:**
+❌ Lacks **precise effort calculations**.  
+❌ May lead to **inconsistent estimates** between teams.  
+
+---
+
+## **3. Time-Based Estimation**
+
+### **What It Is:**
+- Assigns specific **time durations** to tasks (e.g., 4 hours, 2 days, 1 week).
+- Provides **absolute effort estimation** rather than relative sizing.
+
+### **How to Use:**
+1. Break tasks into **smaller sub-tasks** for accurate estimation.
+2. Use historical data to **compare similar tasks**.
+3. Consider **team experience, risks, and dependencies**.
+
+### **When to Use:**
+✅ Best for **waterfall projects** with fixed deadlines.  
+✅ Useful for **resource planning and scheduling**.  
+✅ Ideal when **task complexity is well-understood**.  
+
+### **Advantages:**
+✔ Easy to integrate into **project timelines**.  
+✔ Works well for **fixed-price contracts**.  
+✔ Suitable for **tasks with defined requirements**.  
+
+### **Disadvantages:**
+❌ **Difficult to estimate accurately** for complex tasks.  
+❌ Assumes **all team members work at the same speed**.  
+
+---
+
+## **4. Wideband Delphi**
+
+### **What It Is:**
+- Uses **expert consensus** to arrive at an estimate.
+- Each expert provides an **independent** estimate, and results are discussed to reach an agreement.
+
+### **How to Use:**
+1. A facilitator gathers experts and presents the task.
+2. Experts provide **anonymous** estimates.
+3. The facilitator shares the estimates, and experts discuss differences.
+4. Repeat the process **until consensus is reached**.
+
+### **When to Use:**
+✅ Best for **complex tasks requiring expert opinions**.  
+✅ Useful when **historical data is unavailable**.  
+✅ Ideal for teams with **varied experience levels**.  
+
+### **Advantages:**
+✔ Encourages **collaboration and knowledge sharing**.  
+✔ Reduces **bias and overestimation**.  
+✔ Works well for **high-risk projects**.  
+
+### **Disadvantages:**
+❌ Time-consuming compared to other methods.  
+❌ Requires **experienced team members** to be effective.  
+
+---
+
+## **5. Function Points**
+
+### **What It Is:**
+- A method for estimating effort based on **data flow and system complexity**.
+- Measures **the number of inputs, outputs, queries, and interfaces**.
+
+### **How to Use:**
+1. Identify **key functional components** (e.g., user inputs, system processes).
+2. Assign weights based on **complexity** (Simple, Medium, Complex).
+3. Multiply function points by a **complexity factor** to estimate effort.
+
+### **When to Use:**
+✅ Best for **data-driven applications** (ERP, CRM, financial systems).  
+✅ Works well when estimating **large projects**.  
+✅ Suitable for **teams using structured requirement analysis**.  
+
+### **Advantages:**
+✔ Useful for **benchmarking productivity**.  
+✔ Helps in **cost estimation and budgeting**.  
+✔ Independent of **coding language or technology**.  
+
+### **Disadvantages:**
+❌ Requires **detailed requirement documentation**.  
+❌ Not practical for **Agile or rapidly changing projects**.  
+
+---
+
+## **Summary Table: Choosing the Right Technique**
+
+| Technique | Best For | Key Advantage | Key Disadvantage |
+|-----------|---------|--------------|-----------------|
+| **Story Points** | Agile teams | Encourages relative estimation | Hard for new teams to calibrate |
+| **T-Shirt Sizing** | Early-stage planning | Quick and simple | Lacks precision |
+| **Time-Based Estimation** | Fixed timelines | Fits traditional scheduling | Hard to estimate large tasks |
+| **Wideband Delphi** | Expert-driven projects | Reduces bias | Time-consuming |
+| **Function Points** | Large-scale data projects | Objective effort measurement | Requires detailed requirements |
+
+---
+
+## **Conclusion**
+Choosing the right **estimation technique** depends on **project type, complexity, and team experience**.

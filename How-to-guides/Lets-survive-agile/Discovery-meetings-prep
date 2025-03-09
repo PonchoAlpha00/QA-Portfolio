@@ -1,0 +1,93 @@
+# 📝 How to Prepare for a Discovery Meeting
+
+## 📌 **Objective:**
+A **Discovery Meeting** is a structured discussion aimed at gathering requirements, understanding project scope, and aligning expectations among stakeholders. This document outlines **how to prepare for a successful discovery meeting**.
+
+---
+
+## **1. Define the Meeting Goals**
+Before the meeting, clearly establish:
+- **What are the primary objectives?** (e.g., gather business requirements, define test scope, clarify pain points)
+- **Who are the key stakeholders?** (e.g., Product Managers, Developers, QA, Business Analysts)
+- **What are the expected outcomes?** (e.g., roadmap, backlog items, risk analysis)
+
+---
+
+## **2. Research and Gather Information**
+To make the meeting productive:
+- **Review existing documentation** (Requirement Docs, Previous Test Cases, User Feedback).
+- **Understand the business context** (What problem are we solving?).
+- **Identify key constraints and risks** (Timeline, technology limitations, compliance requirements).
+
+---
+
+## **3. Prepare Key Questions**
+Based on the meeting goals, prepare targeted questions such as:
+
+### **For Business Requirements:**
+- What are the main objectives of this feature/product?
+- Who are the primary users, and what are their expectations?
+- What are the success criteria?
+
+### **For Technical Considerations:**
+- What systems or third-party integrations are involved?
+- Are there any API specifications or data dependencies?
+- What are the known technical challenges?
+
+### **For QA & Testing Scope:**
+- What are the critical functionalities to be tested?
+- Are there compliance or security concerns?
+- What test environments and data are needed?
+
+---
+
+## **4. Structure the Agenda**
+A clear agenda keeps the meeting focused:
+1. **Introduction (5 min)** – Define the purpose and objectives.
+2. **Business Overview (10 min)** – Discuss goals, users, and success criteria.
+3. **Technical Overview (15 min)** – Review system architecture, dependencies.
+4. **QA Considerations (15 min)** – Define test scope, risks, and strategy.
+5. **Next Steps & Action Items (5 min)** – Summarize decisions and assign tasks.
+
+---
+
+## **5. Assign Roles & Responsibilities**
+| Role | Responsibility |
+|------|--------------|
+| **Facilitator** | Leads the discussion, ensures agenda adherence. |
+| **Business Analyst (BA)** | Provides business insights and requirement details. |
+| **QA Representative** | Defines testing needs, risks, and strategies. |
+| **Developer/Architect** | Clarifies technical feasibility and integrations. |
+| **Project Manager** | Aligns the discussion with timelines and deliverables. |
+
+---
+
+## **6. Capture Notes and Action Items**
+- **Document key decisions** made during the meeting.
+- **Identify open questions** that need follow-up.
+- **Assign action items** with deadlines.
+
+Example:
+| Action Item | Owner | Due Date |
+|------------|-------|---------|
+| Define API specs | Dev Team | MM/DD/YYYY |
+| Identify test data requirements | QA Team | MM/DD/YYYY |
+| Confirm compliance constraints | Business Analyst | MM/DD/YYYY |
+
+---
+
+## **7. Follow-Up After the Meeting**
+- **Send a meeting summary** with key takeaways and assigned tasks.
+- **Schedule follow-up discussions** if needed.
+- **Update project documentation** to reflect new insights.
+
+---
+
+## **Best Practices for a Successful Discovery Meeting**
+✅ Keep the discussion **goal-oriented** and avoid unnecessary details.  
+✅ Ensure **all key stakeholders are present** to avoid rework.  
+✅ Use **visual aids** (diagrams, flowcharts) for clarity.  
+✅ Allocate time for **Q&A** to clarify uncertainties.  
+✅ Document and share meeting notes **promptly**.  
+
+---

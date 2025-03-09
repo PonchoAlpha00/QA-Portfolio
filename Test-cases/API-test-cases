@@ -1,0 +1,116 @@
+# 📝 API Testing Test Cases
+
+## 📌 **Objective:**
+Ensure that API endpoints function correctly, handling requests and responses as expected while maintaining security and performance.
+
+---
+
+## **Test Case 1: Validate Successful GET Request**
+
+**Test ID:** API-TC-001  
+**Title:** Validate GET Request for Retrieving User Data  
+**Description:** Verify that a GET request to retrieve user data returns the correct response.
+
+### **Steps:**
+| Step | Action | API Request | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send a GET request to fetch user data | `GET /users/{user_id}` | Response status is 200 OK |
+| 2 | Validate response body | - | Contains correct user details |
+| 3 | Verify content type | - | `application/json` |
+
+### **Test Environment:**
+- API Server: RESTful API (Node.js, Python, etc.)
+- Authentication: Bearer Token
+
+### **Pass/Fail Criteria:**
+- **Pass:** API returns 200 OK with correct user data.
+- **Fail:** API returns incorrect response or status code.
+
+---
+
+## **Test Case 2: Validate Unauthorized Access to API**
+
+**Test ID:** API-TC-002  
+**Title:** Validate Unauthorized Access Handling  
+**Description:** Ensure that unauthenticated users cannot access protected endpoints.
+
+### **Steps:**
+| Step | Action | API Request | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send a GET request without authentication | `GET /users/{user_id}` | Response status is 401 Unauthorized |
+| 2 | Check error message | - | API returns meaningful authentication error |
+
+### **Test Environment:**
+- API Server: RESTful API
+- Authentication: Bearer Token
+
+### **Pass/Fail Criteria:**
+- **Pass:** API returns 401 Unauthorized.
+- **Fail:** API allows access without authentication.
+
+---
+
+## **Test Case 3: Validate API Response Time**
+
+**Test ID:** API-TC-003  
+**Title:** Measure API Response Performance  
+**Description:** Ensure the API responds within acceptable time limits.
+
+### **Steps:**
+| Step | Action | API Request | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send multiple API requests | `GET /users` | Response time is < 500ms |
+| 2 | Log response time | - | Measured and compared against SLA |
+
+### **Test Environment:**
+- Load Testing Tool: JMeter, Postman
+
+### **Pass/Fail Criteria:**
+- **Pass:** API responds within 500ms.
+- **Fail:** API takes longer than the acceptable threshold.
+
+---
+
+## **Test Case 4: Validate API Pagination**
+
+**Test ID:** API-TC-004  
+**Title:** Ensure Proper API Pagination Handling  
+**Description:** Verify that paginated API responses work correctly.
+
+### **Steps:**
+| Step | Action | API Request | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Request first page of users | `GET /users?page=1&limit=10` | Response contains 10 users |
+| 2 | Request next page | `GET /users?page=2&limit=10` | Returns next 10 users |
+| 3 | Validate metadata | - | Total records and pagination info present |
+
+### **Test Environment:**
+- API Server: RESTful API
+
+### **Pass/Fail Criteria:**
+- **Pass:** API returns correct paginated results.
+- **Fail:** Incorrect page navigation or missing pagination metadata.
+
+---
+
+## **Test Case 5: Validate API Rate Limiting**
+
+**Test ID:** API-TC-005  
+**Title:** Ensure API Rate Limiting is Enforced  
+**Description:** Validate that excessive API requests trigger rate limiting.
+
+### **Steps:**
+| Step | Action | API Request | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send API requests in quick succession | `GET /users` (50+ requests per minute) | API returns 429 Too Many Requests |
+| 2 | Check response headers | - | Retry-After header is present |
+
+### **Test Environment:**
+- API Server: RESTful API
+- Load Testing Tool: Postman, JMeter
+
+### **Pass/Fail Criteria:**
+- **Pass:** API returns 429 Too Many Requests.
+- **Fail:** API does not enforce rate limiting.
+
+---

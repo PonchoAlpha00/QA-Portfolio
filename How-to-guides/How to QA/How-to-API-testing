@@ -1,0 +1,142 @@
+# 📝 How to Perform API Testing
+
+## 📌 **Objective:**
+Provide a structured guide on how to test APIs effectively, ensuring reliability, security, and performance.
+
+---
+
+## **1. What is API Testing?**
+API testing is a **type of software testing** that verifies whether an **Application Programming Interface (API)** behaves as expected, ensuring it meets functional, security, performance, and reliability standards.
+
+**Why API Testing?**
+- Detects issues early before UI development.
+- Ensures smooth system integration.
+- Improves data flow validation.
+- Validates security and access controls.
+
+---
+
+## **2. Types of API Testing**
+
+| Type | Description |
+|------|-------------|
+| **Functional Testing** | Verifies API functionality according to business requirements. |
+| **Integration Testing** | Ensures APIs work correctly when combined with other systems. |
+| **Performance Testing** | Evaluates API response time, scalability, and load capacity. |
+| **Security Testing** | Checks authentication, authorization, and data protection mechanisms. |
+| **Negative Testing** | Ensures the API handles invalid data and incorrect requests properly. |
+
+---
+
+## **3. API Testing Tools**
+| Tool | Purpose |
+|------|-------------|
+| **Postman** | Functional and automation API testing. |
+| **Swagger** | API documentation and interactive testing. |
+| **REST Assured** | API automation testing for Java applications. |
+| **SoapUI** | Functional testing for SOAP and REST APIs. |
+| **JMeter** | Load and performance testing of APIs. |
+
+---
+
+## **4. API Testing Process**
+
+### **Step 1: Understand API Requirements**
+- Review API documentation (e.g., Swagger, Postman collections).
+- Identify endpoints, request methods (GET, POST, PUT, DELETE), and parameters.
+- Understand authentication methods (OAuth, API keys, JWT, etc.).
+
+### **Step 2: Set Up Test Environment**
+- Install API testing tools (Postman, JMeter, etc.).
+- Configure test data and authentication tokens.
+
+### **Step 3: Write API Test Cases**
+- Example structure:
+
+| Test ID | Test Scenario | API Request | Expected Result |
+|------|-------------|-------------|----------------|
+| API-TC-001 | Validate user login | `POST /login` with valid credentials | Status `200 OK`, user token returned |
+| API-TC-002 | Unauthorized access | `GET /user/profile` without token | Status `401 Unauthorized` |
+| API-TC-003 | Create new user | `POST /users` with valid data | Status `201 Created`, user ID returned |
+
+### **Step 4: Execute API Requests**
+- Use **Postman** or **cURL** to send requests.
+- Validate response **status codes, headers, and body content**.
+
+### **Step 5: Validate API Responses**
+- Check **response time** (should be <500ms in most cases).
+- Verify **content type** (e.g., `application/json`).
+- Ensure **data integrity** (correct values in the response body).
+
+### **Step 6: Perform Negative Testing**
+- Send requests with **invalid data** (e.g., missing fields, incorrect formats).
+- Check API handles errors properly and returns expected error codes.
+
+| Scenario | API Request | Expected Response |
+|-------------|-------------|----------------|
+| Missing required field | `POST /users` with missing email | Status `400 Bad Request` |
+| Invalid authentication | `GET /orders` with incorrect token | Status `403 Forbidden` |
+
+### **Step 7: Automate API Testing**
+- Use tools like **Postman tests, REST Assured, or JMeter** to automate test execution.
+- Integrate API tests in CI/CD pipelines (e.g., GitHub Actions, Jenkins).
+
+### **Step 8: Monitor API Performance**
+- Conduct **load testing** with JMeter to simulate multiple users.
+- Monitor **response times and request failures**.
+
+---
+
+## **5. API Security Testing**
+- **Check for SQL Injection:** Ensure API does not allow unauthorized SQL queries.
+- **Verify Rate Limiting:** API should reject excessive requests (e.g., 429 Too Many Requests).
+- **Test Authentication & Authorization:** Ensure proper token handling and role-based access control (RBAC).
+- **Data Encryption:** Verify API uses HTTPS and encrypts sensitive data.
+
+---
+
+## **6. Best Practices for API Testing**
+✅ Always validate **status codes, headers, and body content**.  
+✅ Perform **negative testing** to check how the API handles errors.  
+✅ Use **automation** to reduce manual testing effort.  
+✅ Implement API testing in **CI/CD pipelines** for continuous validation.  
+✅ Ensure **security testing** to protect against vulnerabilities.  
+
+---
+
+## **7. Example API Test Case**
+
+**Test Case ID:** API-TC-004  
+**Title:** Validate Successful User Registration  
+**Description:** Ensure a new user can register successfully using the API.
+
+### **Preconditions:**
+- API server must be online.
+- Database should not contain a duplicate user entry.
+
+### **Test Data:**
+| Field | Value |
+|--------|-------|
+| Name | John Doe |
+| Email | johndoe@example.com |
+| Password | `SecurePass123` |
+
+### **Steps to Execute:**
+| Step | Action | Expected Result |
+|------|--------|----------------|
+| 1 | Send a `POST` request to `/register` | Request is accepted |
+| 2 | Verify response status | Status `201 Created` |
+| 3 | Validate response body | Contains new user ID and success message |
+| 4 | Check database entry | User is stored in the database |
+
+### **Expected Outcome:**
+- New user is successfully created and stored in the database.
+
+### **Postconditions:**
+- The API should return a valid **user ID** and a success message.
+
+### **Test Priority:** High  
+### **Test Type:** Functional  
+### **References:** API Spec Doc, Jira Ticket `API-101`  
+
+---

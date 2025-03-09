@@ -1,0 +1,102 @@
+# 📝 API Bug Reports
+
+## 📌 **Bug Report 1: API Returns Incorrect HTTP Status Code**
+
+**Bug ID:** API-BR-001  
+**Title:** GET /cart returns 500 Internal Server Error instead of 404 Not Found  
+**Description:** When requesting a non-existent cart, the API incorrectly returns a 500 error instead of the expected 404.  
+**Severity:** High  
+**Priority:** Critical  
+
+### **Steps to Reproduce:**
+| Step | Action | API Endpoint | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send a GET request for a non-existent cart | `GET /cart/{invalid_id}` | Should return 404 Not Found |
+| 2 | Check API response | - | Returns 500 Internal Server Error |
+
+**Expected Outcome:** The API should return 404 Not Found when the cart does not exist.  
+**Actual Outcome:** The API returns a 500 Internal Server Error.  
+**Attachments:** API response log.  
+
+---
+
+## 📌 **Bug Report 2: Payment API Double Charges Users**
+
+**Bug ID:** API-BR-002  
+**Title:** POST /checkout processes duplicate payments on retry  
+**Description:** If a user retries a failed payment, the API does not check transaction status and charges the user twice.  
+**Severity:** Critical  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | API Endpoint | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send a checkout request | `POST /checkout` | Payment initiated |
+| 2 | Retry the request before the previous one completes | - | Should return an error or prevent duplicate charge |
+| 3 | Check transaction history | - | User is charged twice |
+
+**Expected Outcome:** The API should detect duplicate requests and prevent multiple charges.  
+**Actual Outcome:** Users are charged twice for the same order.  
+**Attachments:** Payment logs showing duplicate charges.  
+
+---
+
+## 📌 **Bug Report 3: Unauthorized Access to User Data**
+
+**Bug ID:** API-BR-003  
+**Title:** GET /user/{id} exposes private user details  
+**Description:** The API allows unauthorized users to retrieve private user data without authentication.  
+**Severity:** Critical  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | API Endpoint | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send a GET request to fetch user details without authentication | `GET /user/{id}` | Should return 401 Unauthorized |
+| 2 | Observe the response | - | Returns full user details |
+
+**Expected Outcome:** API should enforce authentication before returning user data.  
+**Actual Outcome:** User data is accessible without authentication.  
+**Attachments:** API response showing private data exposure.  
+
+---
+
+## 📌 **Bug Report 4: Rate Limiting Not Enforced on Login API**
+
+**Bug ID:** API-BR-004  
+**Title:** POST /login allows unlimited incorrect attempts  
+**Description:** The login API does not enforce rate limiting, allowing brute-force attacks.  
+**Severity:** High  
+**Priority:** High  
+
+### **Steps to Reproduce:**
+| Step | Action | API Endpoint | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Attempt login with incorrect credentials multiple times | `POST /login` | API should block after several failed attempts |
+| 2 | Continue sending requests | - | API allows unlimited attempts |
+
+**Expected Outcome:** API should block or delay responses after multiple failed login attempts.  
+**Actual Outcome:** API allows unlimited login attempts without restrictions.  
+**Attachments:** Request logs showing brute-force attempts.  
+
+---
+
+## 📌 **Bug Report 5: API Returns Sensitive Data in Error Responses**
+
+**Bug ID:** API-BR-005  
+**Title:** Error messages expose database structure  
+**Description:** When an API request fails, it returns detailed SQL error messages exposing internal database queries.  
+**Severity:** High  
+**Priority:** Medium  
+
+### **Steps to Reproduce:**
+| Step | Action | API Endpoint | Expected Result |
+|------|--------|-------------|----------------|
+| 1 | Send an invalid request with incorrect data format | `POST /orders` | API should return a generic error message |
+| 2 | Observe the response | - | SQL error message is exposed |
+
+**Expected Outcome:** API should return a generic error message without exposing database details.  
+**Actual Outcome:** API response includes internal SQL query details.  
+**Attachments:** API error response screenshot.  
+
+---

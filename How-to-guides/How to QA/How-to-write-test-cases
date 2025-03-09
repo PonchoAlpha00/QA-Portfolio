@@ -1,0 +1,137 @@
+# 📝 How to Write a Test Case
+
+## 📌 **Objective:**
+Provide a structured guide on how to write test cases using the standardized template to ensure clarity, consistency, and effective testing.
+
+---
+
+## **1. Understanding a Test Case**
+A **test case** is a documented set of **conditions, steps, and expected outcomes** used to validate software functionality.
+
+**Why Write Test Cases?**
+- Ensures software meets business requirements.
+- Provides clear instructions for testers.
+- Facilitates regression testing.
+- Improves test coverage and defect detection.
+
+---
+
+## **2. Test Case Template Overview**
+Each test case should follow this structured format:
+
+| Field | Description |
+|--------|-------------|
+| **Test Case ID** | Unique identifier for tracking. |
+| **Title** | Brief summary of what the test is verifying. |
+| **Description** | Explanation of the objective of the test. |
+| **Preconditions** | Requirements or setup before test execution. |
+| **Test Data** | Specific input values needed for execution. |
+| **Steps to Execute** | Ordered actions to perform the test. |
+| **Expected Outcome** | The expected result after executing the steps. |
+| **Postconditions** | Cleanup steps after test execution. |
+| **Test Priority** | Low, Medium, High based on impact. |
+| **Test Type** | Functional, Regression, UI, API, etc. |
+| **References** | Jira Story, Requirement Document, Acceptance Criteria. |
+| **Attachments** | Screenshots, logs, or additional documentation. |
+
+---
+
+## **3. Writing a Test Case Step by Step**
+
+### **Step 1: Assign a Unique Test Case ID**
+- Example: `TC-001`
+- Use a consistent naming convention to make tracking easier.
+
+### **Step 2: Write a Clear and Concise Title**
+- Example: `Validate User Login with Correct Credentials`
+- Titles should be descriptive but not overly detailed.
+
+### **Step 3: Provide a Description**
+- Describe the purpose of the test case.
+- Example: `Ensure users can log in successfully with valid credentials.`
+
+### **Step 4: Define Preconditions**
+- Any setup needed before execution.
+- Example:
+  - User must have an active account.
+  - Application must be online.
+
+### **Step 5: Specify Test Data**
+- Data required for the test.
+- Example:
+  | Field | Value |
+  |--------|-------|
+  | Username | `testuser@example.com` |
+  | Password | `Test@1234` |
+
+### **Step 6: Write Step-by-Step Execution Instructions**
+- Example:
+  | Step | Action | Expected Result |
+  |------|--------|----------------|
+  | 1 | Open the login page | Login screen is displayed |
+  | 2 | Enter valid credentials | Credentials are accepted |
+  | 3 | Click the login button | User is redirected to the dashboard |
+
+### **Step 7: Define the Expected Outcome**
+- Describe the correct system behavior.
+- Example: `User should be successfully logged in and navigated to the dashboard.`
+
+### **Step 8: Mention Postconditions (If Applicable)**
+- Define any necessary cleanup.
+- Example: `User session should be active and logout option should be available.`
+
+### **Step 9: Set Test Priority and Type**
+- **Priority:** High / Medium / Low
+- **Type:** Functional, Regression, UI, API, Performance, etc.
+
+### **Step 10: Add References and Attachments**
+- Link to Jira stories, requirement documents, or mockups.
+- Attach screenshots or logs if needed.
+
+---
+
+## **4. Example Test Case**
+
+**Test Case ID:** TC-002  
+**Title:** Validate Error Message for Invalid Login  
+**Description:** Ensure users receive an appropriate error message when entering incorrect credentials.
+
+### **Preconditions:**
+- User must be on the login page.
+
+### **Test Data:**
+| Field | Value |
+|--------|-------|
+| Username | `wronguser@example.com` |
+| Password | `WrongPass123` |
+
+### **Steps to Execute:**
+| Step | Action | Expected Result |
+|------|--------|----------------|
+| 1 | Open the login page | Login screen is displayed |
+| 2 | Enter invalid credentials | Credentials are not accepted |
+| 3 | Click the login button | Error message `Invalid username or password` appears |
+
+### **Expected Outcome:**
+- The error message `Invalid username or password` should be displayed.
+
+### **Postconditions:**
+- The login page remains visible, and the user is not redirected.
+
+### **Test Priority:** Medium  
+### **Test Type:** Functional  
+### **References:** Jira Ticket `LOGIN-789`  
+### **Attachments:** Screenshot of the error message (if needed)  
+
+---
+
+## **5. Best Practices for Writing Test Cases**
+✅ **Keep test cases simple and clear.**  
+✅ **Use consistent naming conventions.**  
+✅ **Avoid assumptions—define preconditions clearly.**  
+✅ **Ensure test steps are reproducible.**  
+✅ **Focus on expected vs. actual outcomes.**  
+✅ **Group similar test cases together.**  
+✅ **Ensure traceability to requirements.**  
+
+---

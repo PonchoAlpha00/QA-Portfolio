@@ -1,0 +1,154 @@
+# 📝 Challenging Test Cases
+
+## 📌 **Objective:**
+Test edge cases and complex scenarios that may impact the system's stability, security, and performance.
+
+---
+
+## **Test Case 1: Concurrent Cart Updates (Race Condition)**
+
+**Test ID:** TC-011  
+**Description:** Ensure that two users updating the cart simultaneously do not cause data conflicts.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | User A adds an item to the cart | Item: Laptop | Item appears in User A’s cart |
+| 2 | User B removes the same item from the cart | Same Laptop | Item should be removed for both users if real-time sync is enabled |
+| 3 | Refresh both users' carts | - | Data should be correctly updated with no duplication or loss |
+
+---
+
+## **Test Case 2: Handling Large Volume of Items**
+
+**Test ID:** TC-012  
+**Description:** Test the system’s handling of large-scale cart operations.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add 1000+ items to the cart | Bulk add action | System should remain responsive |
+| 2 | Attempt to view the cart | - | Cart loads without performance degradation |
+| 3 | Proceed to checkout | - | System does not crash, and checkout process works |
+
+---
+
+## **Test Case 3: Network Failure During Checkout**
+
+**Test ID:** TC-013  
+**Description:** Ensure system handles unexpected network failures during payment.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Proceed to checkout | Items in cart | Redirected to payment page |
+| 2 | Disconnect internet before payment confirmation | - | System should show an appropriate error message |
+| 3 | Reconnect and retry payment | - | User should be able to complete the payment without double charge |
+
+---
+
+## **Test Case 4: Session Expiry with Active Cart**
+
+**Test ID:** TC-014  
+**Description:** Ensure that session expiration does not result in cart loss.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add items to the cart | Item: Phone | Items should appear in the cart |
+| 2 | Leave the session inactive for 1 hour | - | Session expires |
+| 3 | Log back in and check the cart | - | Items should persist after login |
+
+---
+
+## **Test Case 5: Discount Code Conflicts**
+
+**Test ID:** TC-015  
+**Description:** Validate how the system handles conflicting discount codes.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add an item to the cart | Item: TV | Item added successfully |
+| 2 | Apply a discount code | Code: 10%OFF | Discount applies correctly |
+| 3 | Apply another conflicting code | Code: 20%OFF | System should either allow the highest discount or reject the second code |
+
+---
+
+## **Test Case 6: Payment Rollback in Case of Failure**
+
+**Test ID:** TC-016  
+**Description:** Ensure proper handling of payment failures.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Proceed to checkout | Items in cart | Redirected to payment page |
+| 2 | Payment is deducted but checkout fails | System error | Payment should be rolled back, and funds refunded |
+| 3 | Verify order status | - | Order should not be completed |
+
+---
+
+## **Test Case 7: Cart Synchronization Across Multiple Devices**
+
+**Test ID:** TC-017  
+**Description:** Ensure that a user’s cart is synced across devices.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add an item to the cart on desktop | Item: Headphones | Item appears in the desktop cart |
+| 2 | Open the cart on mobile | - | Item should also appear in the mobile cart |
+| 3 | Remove the item on mobile | - | Item should be removed from both devices |
+
+---
+
+## **Test Case 8: Decimal Precision in Prices**
+
+**Test ID:** TC-018  
+**Description:** Ensure pricing calculations remain accurate.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Add an item with tax and discount | Price: $99.99, Tax: 8% | Correct tax should be applied |
+| 2 | Convert price to another currency | USD to EUR | Conversion should be accurate without rounding errors |
+| 3 | Checkout and review total | - | Total should match all applied calculations |
+
+---
+
+## **Test Case 9: Unauthorized Cart Modification via API**
+
+**Test ID:** TC-019  
+**Description:** Ensure backend security against unauthorized API modifications.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Attempt to modify cart price via API | Change price to $0 | System should reject unauthorized modification |
+| 2 | Check cart UI after API request | - | Prices should remain unchanged |
+| 3 | Review server logs for security alerts | - | Unauthorized access should be logged |
+
+---
+
+## **Test Case 10: Stress Testing the Checkout Process**
+
+**Test ID:** TC-020  
+**Description:** Test the system's ability to handle high concurrency at checkout.
+
+| Step | Action | Data | Expected Result |
+|------|--------|------|----------------|
+| 1 | Simulate 1000 users checking out at once | Load test tool | System should remain stable without crashes |
+| 2 | Measure checkout performance | Response time < 3s | Transactions should process efficiently |
+| 3 | Verify database entries for all transactions | - | Orders should be correctly recorded with no duplication |
+
+---
+
+## 📌 **Test Environment:**
+- Browsers: Chrome, Firefox, Edge, Safari
+- OS: Windows, macOS, Android, iOS
+- Payment Gateways: PayPal, Stripe, Credit Cards
+- Database: MySQL/PostgreSQL
+
+## 📌 **Pass/Fail Criteria:**
+- Pass: System handles all edge cases correctly without crashes, errors, or incorrect behaviors.
+- Fail: System fails to manage high loads, concurrent actions, or security issues.
+
+## 📌 **Risks & Assumptions:**
+- API security must be enforced to prevent unauthorized cart changes.
+- Payment gateway should support rollback functionality.
+- Session handling should persist cart data correctly.
+
+---
+
