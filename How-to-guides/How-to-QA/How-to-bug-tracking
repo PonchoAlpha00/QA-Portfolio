@@ -1,0 +1,105 @@
+# 📝 How to Track Bugs and Defects
+
+## 📌 **Objective:**
+Efficient bug tracking ensures that software defects are identified, logged, prioritized, and resolved effectively. This guide explains **how to track bugs and defects** throughout the software development lifecycle (SDLC).
+
+---
+
+## **1. Bug Tracking Process Overview**
+### **Step 1: Identify the Bug**
+- Conduct functional, UI, API, or performance testing.
+- Verify unexpected behavior against expected outcomes.
+
+### **Step 2: Log the Bug**
+- Use a **bug tracking tool** (Jira, Bugzilla, Trello, Azure DevOps, etc.).
+- Provide a **detailed description** with steps to reproduce.
+- Assign severity and priority.
+
+### **Step 3: Assign and Triage**
+- The development team reviews and assigns the bug.
+- If needed, conduct a **root cause analysis (RCA)**.
+
+### **Step 4: Fix and Retest**
+- Developers implement a fix.
+- QA team revalidates and performs regression testing.
+
+### **Step 5: Close the Bug**
+- If resolved, the bug is marked **Closed**.
+- If the issue persists, it is **Reopened** for further investigation.
+
+---
+
+## **2. Bug Report Template**
+| **Field** | **Description** |
+|-----------|----------------|
+| **Bug ID** | Unique identifier for tracking. |
+| **Title** | Short, descriptive summary of the issue. |
+| **Description** | Detailed explanation, including expected vs. actual behavior. |
+| **Severity** | Defines the impact (Critical, High, Medium, Low). |
+| **Priority** | Defines the urgency (Critical, High, Medium, Low). |
+| **Environment** | OS, browser, application version. |
+| **Preconditions** | Setup required before reproducing the bug. |
+| **Steps to Reproduce** | Ordered actions to replicate the issue. |
+| **Expected Result** | The correct behavior expected. |
+| **Actual Result** | The incorrect behavior observed. |
+| **Attachments** | Screenshots, logs, or recordings. |
+| **References** | Jira Ticket, Test Case ID, Requirement Doc. |
+
+---
+
+## **3. Bug Lifecycle Stages**
+
+| **Status** | **Description** |
+|-----------|-------------|
+| **New** | The bug is logged but not reviewed yet. |
+| **Assigned** | The bug is assigned to a developer for resolution. |
+| **In Progress** | The developer is actively working on the fix. |
+| **Fixed** | The issue has been resolved and is ready for retesting. |
+| **Retest** | QA verifies the fix by re-executing test cases. |
+| **Closed** | The fix is validated, and the bug is considered resolved. |
+| **Reopened** | The issue persists, requiring further investigation. |
+| **Deferred** | The bug is postponed due to lower priority or other dependencies. |
+| **Rejected** | The reported issue is invalid or expected behavior. |
+
+---
+
+## **4. Prioritizing and Categorizing Bugs**
+
+### **Severity Levels:**
+| **Severity** | **Impact** |
+|-------------|-------------|
+| **Critical** | System crash, data loss, security vulnerability. |
+| **High** | Major functionality failure blocking key operations. |
+| **Medium** | Non-blocking issues affecting usability. |
+| **Low** | Minor UI issues, cosmetic defects. |
+
+### **Priority Levels:**
+| **Priority** | **Urgency** |
+|-------------|-------------|
+| **Critical** | Needs an immediate fix. |
+| **High** | Should be resolved in the current sprint/release. |
+| **Medium** | Can be scheduled for a future release. |
+| **Low** | Fix if time allows, does not impact functionality. |
+
+---
+
+## **5. Tools for Bug Tracking**
+| **Tool** | **Features** |
+|---------|-------------|
+| **Jira** | Agile issue tracking, sprint planning, customizable workflows. |
+| **Bugzilla** | Open-source bug tracking, advanced search & reporting. |
+| **Azure DevOps** | Integrated with CI/CD, detailed work item tracking. |
+| **Trello** | Visual task management, simple workflow tracking. |
+| **MantisBT** | Lightweight, easy-to-use bug tracking. |
+
+---
+
+## **6. Best Practices for Bug Tracking**
+✅ Write **clear and concise bug descriptions**.  
+✅ Ensure **steps to reproduce** are detailed and consistent.  
+✅ Attach **screenshots, logs, and videos** to aid debugging.  
+✅ Assign **accurate severity and priority** for faster resolution.  
+✅ Regularly **review and update bug statuses**.  
+✅ Maintain a **consistent bug tracking process** across teams.  
+
+---

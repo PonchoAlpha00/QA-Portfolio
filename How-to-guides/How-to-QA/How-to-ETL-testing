@@ -1,0 +1,152 @@
+# 📝 How to Perform ETL Testing
+
+## 📌 **Objective:**
+Provide a structured guide on how to test **ETL (Extract, Transform, Load) processes**, ensuring data integrity, accuracy, and performance across different stages.
+
+---
+
+## **1. What is ETL Testing?**
+ETL testing ensures that data is correctly **extracted** from source systems, **transformed** according to business rules, and **loaded** into the target database without loss, corruption, or errors.
+
+**Why ETL Testing?**
+- Ensures **data accuracy and completeness**.
+- Identifies **data integrity issues** before reaching production.
+- Improves **data consistency** across multiple sources.
+- Validates **business transformation rules**.
+
+---
+
+## **2. Types of ETL Testing**
+
+| Type | Description |
+|------|-------------|
+| **Data Completeness Testing** | Ensures all source records are extracted and loaded correctly. |
+| **Data Transformation Testing** | Verifies that data transformations follow business rules. |
+| **Data Integrity Testing** | Ensures relationships and constraints are maintained. |
+| **Performance Testing** | Validates ETL job execution times under different loads. |
+| **Incremental Load Testing** | Ensures only new/updated records are loaded without duplication. |
+| **Error Handling Testing** | Checks how the ETL system handles invalid or missing data. |
+
+---
+
+## **3. ETL Testing Tools**
+
+| Tool | Purpose |
+|------|-------------|
+| **SQL Queries** | Validates data accuracy at different stages. |
+| **Talend** | ETL testing and data integration. |
+| **Informatica** | ETL tool for data warehousing. |
+| **Apache Nifi** | Automates data flows in ETL pipelines. |
+| **QuerySurge** | Automated ETL testing tool. |
+
+---
+
+## **4. ETL Testing Process**
+
+### **Step 1: Understand ETL Requirements**
+- Review **source-to-target mapping** documents.
+- Identify **data sources, transformation logic, and load strategy**.
+
+### **Step 2: Set Up Test Environment**
+- Configure **source databases, staging area, and target warehouse**.
+- Prepare test data covering **positive and negative cases**.
+
+### **Step 3: Write ETL Test Cases**
+- Example structure:
+
+| Test ID | Test Scenario | SQL Query | Expected Result |
+|------|-------------|-------------|----------------|
+| ETL-TC-001 | Validate data extraction | `SELECT COUNT(*) FROM source_table;` | Row count matches source |
+| ETL-TC-002 | Verify transformation logic | `SELECT transformed_column FROM staging_table;` | Transformed values match business rules |
+| ETL-TC-003 | Check data load | `SELECT COUNT(*) FROM target_table;` | Row count matches transformed records |
+
+### **Step 4: Execute ETL Jobs**
+- Run the **ETL pipeline** and capture logs.
+- Identify **data mismatches, duplicates, or missing records**.
+
+### **Step 5: Validate Data at Each Stage**
+#### **Extraction Validation (E → T)**
+- Verify records **extracted from source match** expectations.
+- Example SQL query:
+  ```sql
+  SELECT COUNT(*) FROM source_table;
+  ```
+
+#### **Transformation Validation (T → L)**
+- Check if business rules are **applied correctly**.
+- Example SQL query:
+  ```sql
+  SELECT source_value, transformed_value FROM staging_table;
+  ```
+
+#### **Load Validation (L → Target)**
+- Ensure **transformed data is loaded correctly** into the final destination.
+- Example SQL query:
+  ```sql
+  SELECT COUNT(*) FROM target_table;
+  ```
+
+### **Step 6: Perform Incremental Load Testing**
+- Run ETL job with **new or updated records**.
+- Validate **duplicate checks and performance impact**.
+
+### **Step 7: Perform Performance & Error Handling Tests**
+- **Stress test** ETL pipelines with high-volume data.
+- Simulate **data corruption, NULL values, or invalid types**.
+
+---
+
+## **5. ETL Data Validation Checklist**
+✅ Ensure **record counts match** at source, staging, and target.  
+✅ Verify **NULL values, duplicates, and data truncation**.  
+✅ Check **primary key and foreign key constraints**.  
+✅ Validate **business rule transformations**.  
+✅ Ensure **incremental loads work without duplicating records**.  
+✅ Monitor **ETL job execution time for performance issues**.  
+
+---
+
+## **6. Example ETL Test Case**
+
+**Test Case ID:** ETL-TC-004  
+**Title:** Validate Data Transformation for Sales Data  
+**Description:** Ensure sales data transformation rules are correctly applied.
+
+### **Preconditions:**
+- ETL job must be scheduled and configured.
+- Source table should contain valid sales transactions.
+
+### **Test Data:**
+| Field | Source Value | Expected Transformed Value |
+|--------|-------------|-------------------------|
+| Amount | 1000 | 1000.00 (formatted to two decimals) |
+| Date | `2024-03-01` | `01-MAR-2024` (converted format) |
+
+### **Steps to Execute:**
+| Step | Action | Expected Result |
+|------|--------|----------------|
+| 1 | Run the ETL job | Transformation completes successfully |
+| 2 | Verify transformed values | Data matches transformation rules |
+| 3 | Check row count consistency | No missing or extra records |
+
+### **Expected Outcome:**
+- Transformed data should match expected business rules.
+
+### **Postconditions:**
+- Data in the **target table should be accurate and consistent**.
+
+### **Test Priority:** High  
+### **Test Type:** Data Transformation  
+### **References:** ETL Mapping Document, Jira Ticket `ETL-102`  
+
+---
+
+## **7. Best Practices for ETL Testing**
+✅ Use **SQL queries to validate data accuracy** at each ETL stage.  
+✅ Automate repetitive ETL test cases for **efficiency**.  
+✅ Perform **full and incremental load** validations.  
+✅ Ensure **ETL error handling is tested** for invalid or corrupt data.  
+✅ Optimize **performance testing** for large data loads.  
+✅ Collaborate with **data engineers and business analysts** for test validation.  
+
+---
