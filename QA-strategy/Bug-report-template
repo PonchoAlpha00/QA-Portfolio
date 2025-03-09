@@ -1,0 +1,66 @@
+# 📝 Bug Report Template
+
+## 📌 **Objective:**
+Provide a structured template for reporting software defects clearly and efficiently.
+
+---
+
+## **Bug Report Structure**
+
+| Field | Description |
+|--------|-------------|
+| **Bug ID** | Unique identifier for tracking the issue. |
+| **Title** | Concise name summarizing the issue. |
+| **Description** | Detailed explanation of the bug, including impact. |
+| **Severity** | Critical, High, Medium, Low – based on business impact. |
+| **Priority** | Critical, High, Medium, Low – based on urgency. |
+| **Environment** | OS, Browser, Application Version, Database details, etc. |
+| **Preconditions** | Any setup or conditions required before reproducing the issue. |
+| **Steps to Reproduce** | Step-by-step actions leading to the bug. |
+| **Expected Outcome** | The correct behavior expected. |
+| **Actual Outcome** | The incorrect behavior observed. |
+| **Attachments (if any)** | Screenshots, logs, videos, or system reports. |
+| **References** | Jira Story, Test Case ID, Requirement Document. |
+
+---
+
+## **Example Bug Report**
+
+**Bug ID:** BR-001  
+**Title:** Login Button Not Functioning on Chrome  
+**Description:** The login button does not respond when clicked in Google Chrome, preventing users from accessing their accounts.
+
+### **Severity:** High  
+### **Priority:** Critical  
+
+### **Environment:**
+- **OS:** Windows 11
+- **Browser:** Google Chrome 116.0.5845.96
+- **Application Version:** v2.3.5
+
+### **Preconditions:**
+- User must be on the login page.
+- Internet connection should be stable.
+
+### **Steps to Reproduce:**
+| Step | Action | Expected Result |
+|------|--------|----------------|
+| 1 | Navigate to the login page | The login form appears |
+| 2 | Enter valid credentials | Fields accept input |
+| 3 | Click the login button | User should be redirected to the dashboard |
+
+### **Expected Outcome:**
+- User should be able to log in successfully.
+
+### **Actual Outcome:**
+- Clicking the login button does nothing; the page remains static.
+
+### **Attachments:**
+- Screenshot of browser console errors.
+- Video recording of the issue.
+
+### **References:**
+- Jira Ticket: `LOGIN-456`
+- Related Test Case: `TC-001`
+
+---

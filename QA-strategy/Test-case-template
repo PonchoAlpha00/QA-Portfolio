@@ -1,0 +1,62 @@
+# 📝 Test Case Template
+
+## 📌 **Objective:**
+Provide a standardized template for writing structured test cases to ensure clarity, consistency, and traceability.
+
+---
+
+## **Test Case Structure**
+
+| Field | Description |
+|--------|-------------|
+| **Test Case ID** | Unique identifier for the test case. |
+| **Title** | Concise name describing the test objective. |
+| **Description** | Brief explanation of what the test verifies. |
+| **Preconditions** | Setup steps, data requirements, or configurations. |
+| **Test Data** | Specific data required for the test. |
+| **Steps to Execute** | Sequential actions to perform the test. |
+| **Expected Outcome** | The expected behavior/result of the test. |
+| **Postconditions** | Cleanup or system reset after execution. |
+| **Test Priority** | Low / Medium / High based on impact. |
+| **Test Type** | Functional, Regression, UI, API, etc. |
+| **References** | Jira Story, Requirement Document, Acceptance Criteria. |
+| **Attachments (if any)** | Screenshots, mockups, logs. |
+
+---
+
+## **Example Test Case**
+
+**Test Case ID:** TC-001  
+**Title:** Validate User Login with Correct Credentials  
+**Description:** Ensure users can log in successfully with valid credentials.
+
+### **Preconditions:**
+- User must have an active account.
+- Application must be online.
+
+### **Test Data:**
+| Field | Value |
+|--------|-------|
+| Username | `testuser@example.com` |
+| Password | `Test@1234` |
+
+### **Steps to Execute:**
+| Step | Action | Expected Result |
+|------|--------|----------------|
+| 1 | Open the login page | Login screen is displayed |
+| 2 | Enter valid credentials | Credentials are accepted |
+| 3 | Click the login button | User is redirected to the dashboard |
+
+### **Expected Outcome:**
+- User should be successfully logged in and navigated to the dashboard.
+
+### **Postconditions:**
+- User session should be active.
+- Logout option should be available.
+
+### **Test Priority:** High  
+### **Test Type:** Functional  
+### **References:** Jira Ticket `LOGIN-1234`  
+### **Attachments:** Screenshot of successful login (if needed)  
+
+---
